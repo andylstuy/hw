@@ -81,8 +81,8 @@ public class Rational {
         }
     }
 
-    public int compareTo (Rational r) {
-        double diff = this.floatValue() - r.floatValue();
+    public int compareTo (Object r) {
+        double diff = this.floatValue() - ((Rational)r).floatValue();
 	if (diff > 0)
 	    diff = 1;
 	else if (diff < 0)
