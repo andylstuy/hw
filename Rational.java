@@ -1,7 +1,7 @@
 // Andy Lui
 // pd9
-// HW27
-// 2013-11-18
+// HW28
+// 2013-11-19
 
 public class Rational {
 
@@ -92,7 +92,11 @@ public class Rational {
 	return (int) diff;
     }
 
-
+    public boolean equals(Rational r) {
+	this.reduce();
+	r.reduce();
+	return ( this.compareTo(r) == 0 );
+    }
 
     
     public static void main(String[] args) {
@@ -151,6 +155,14 @@ public class Rational {
 	Rational m = new Rational(3,5);
 	Rational n = new Rational(6,10);
 	System.out.println("Comparing m to n: " + m.compareTo(n));
+	
+	//Testing overriding equals
+	Rational o = new Rational(4,9);
+	Rational p = new Rational(12,27);
+	System.out.println("3/5 equals 6/10 ---> " + m.equals(n)); //true
+	System.out.println("4/9 equals 12/27 ---> " + o.equals(p)); //true
+	System.out.println("3/5 equals 4/9 ---> " + m.equals(o)); //false
+
 	
     }//end main
 
